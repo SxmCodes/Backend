@@ -23,6 +23,8 @@ func main(){
 	// Function call.
 	fmt.Println(sum(1,2));
 	fmt.Println(sum2(1,20));
+
+	
 }
 
 // functions 
@@ -30,5 +32,6 @@ func sum(a, b int) int{ // we can write (x,y int) only when we now that both x a
 	return a + b;
 }
 func sum2(a1 int, b1 int) int { // this is the defalut way. 
+	// There is something known as function signatures. If you want to return something from teh function, we need to specify the type of thing which is being returned, in our case it's int. 
 	return a1 + b1;
 }
