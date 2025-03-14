@@ -20,4 +20,15 @@ func main(){
 	fmt.Println(type1)
 	fmt.Println(type2)
 
+	// Function call.
+	fmt.Println(sum(1,2));
+	fmt.Println(sum2(1,20));
+}
+
+// functions 
+func sum(a, b int) int{ // we can write (x,y int) only when we now that both x and y are integers. 
+	return a + b;
+}
+func sum2(a1 int, b1 int) int { // this is the defalut way. 
+	return a1 + b1;
 }
