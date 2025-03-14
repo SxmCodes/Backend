@@ -14,4 +14,10 @@ func main(){
 	yo := "Hello world 1";
 	fmt.Println("Hello world again")
 	fmt.Println(yo)
+
+	// Declaring multiple variables at once.
+	type1, type2 := "Hello world 2", "Hello world 3";
+	fmt.Println(type1)
+	fmt.Println(type2)
+
 }
