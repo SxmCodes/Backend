@@ -39,7 +39,16 @@ func main(){
 	// ignoring the return value. If function return 2 things but we only want 1 thing. 
 	// x, _ := getPoints() // the compiler completely removes from our code. 
 
+	// We can also change the names of the return values. 
+
 	
+
+}
+
+func Getcords(x, y int){
+	// This is called naked return statements, just ignore using it. Use it in very simple functions.
+	// x and y are already initialized with the default values (0)
+	return // this will automatically return x and y (0, 0)
 }
 
 // example :- 
