@@ -20,7 +20,7 @@ func createMatrix (rows, cols int ) [] [] int{
 // Tip:- 
 // You must never do this thing:- 
 // someSlice := append(otherslice, element) // this is wrong.
-// otherslice := append(otherslice, element) // correct. 
+// otherslice := append(otherslice, element) // correct. ``
 
 
 func main(){}
