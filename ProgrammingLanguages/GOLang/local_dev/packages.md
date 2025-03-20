@@ -77,3 +77,7 @@ require(
 **This replace thing is good on a local machine or when you are testing something, don't use it on a production env**
 
 **Typically we will push that repo to git and then import it from there.**
+
+**Export as few things as possible when building a library package. Anytime you export any function, you need to suppor that function as well.**
+
+**You need not to change a package exported API, rather you need to focus on to keep changes to internal functionality.**
