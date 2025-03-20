@@ -1,5 +1,4 @@
 package main 
-
 import "fmt"
 
 // Maps in Go 
@@ -40,6 +39,18 @@ func divide(a, b int) (int, error){
 	}
 	return a/b, nil
 }
+// also some sample functions to know about advance functions. // The first class functions. 
+func add (a, b int) int {
+	return a+b
+}
+func mult (a, b int) int {
+	return a*b
+}
+
+func aggregate(a, b, c int, arth func(int, int) int) int {
+	return arth(arth(a,b), c)
+}
+
 ages := map[string] int {
 	"John": 37,
 	"Mary": 24,
