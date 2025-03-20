@@ -15,3 +15,21 @@ If you are comparing one slice to another slice, you are not comparing the under
 
 # Nested maps
 Maps ke aandar maps. 
+These are not much used. 
+
+Using a structure inside a map as a key is simpler to do. 
+
+## Runes
+Runes are individual charaters, it is an alias of int32 and it's used to represents charcters.
+Example :- 
+```
+package main
+
+import "fmt"
+
+func main() {
+    ch := 'A'  // Single quotes me diya to rune ban gaya
+    fmt.Println(ch)      // Output: 65 (Unicode value of 'A')
+    fmt.Printf("%c\n", ch) // Output: A
+}
+```
