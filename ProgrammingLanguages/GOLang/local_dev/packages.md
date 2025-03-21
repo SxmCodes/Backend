@@ -81,3 +81,60 @@ require(
 **Export as few things as possible when building a library package. Anytime you export any function, you need to suppor that function as well.**
 
 **You need not to change a package exported API, rather you need to focus on to keep changes to internal functionality.**
+
+# Channels 
+Go curcurrency ke liye goroutines and channels ka support leta hai. Both of them work togehter and make parallel programmig and sync programming happening all togehter. 
+
+Ab go goroutines aur channels ka funda ye hai ki go routeins uses **channels** for communications between them. 
+Channel ka syntax 
+```
+ch := make(chan int)  // Integer type ka channel
+```
+
+Basic channel implementation
+```
+package main
+
+import "fmt"
+
+func sendData(ch chan int) {
+    ch <- 10 // Data send karna
+}
+
+func main() {
+    ch := make(chan int) // Channel bana rahe hain
+
+    go sendData(ch)  // Goroutine me function call
+
+    data := <-ch  // Channel se data receive karna
+    fmt.Println("Received:", data)
+}
+```
+Ab yaha pe hamne channel bna diya of name ch. Ye basically iik pipeline jaise kaam karega, which basically means that ye main function aur go routein mai data bhejne ka kaam karega.
+
+When (ch) functions gets called :-  
+Yeh yahan ruk jayega (block ho jayega) jab tak koi receiver nahi hota.
+Yani jab tak main() function <-ch use karke value receive nahi karega, sendData() proceed nahi karega.
+
+Same goes while recieving the call, if nothing is being sent in the channel. IT WILL WAIT
+
+This is the flow of Go program
+```
+Main Goroutine:
+   |
+   |-----> [Create Channel]
+   |
+   |-----> [Start Goroutine -> sendData()]
+   |                        |
+   |                        |-----> [Send 10 to Channel] (BLOCKED)
+   |
+   |-----> [Receive Data from Channel] (UNBLOCKS sendData)
+   |
+   |-----> [Print "Received: 10"]
+   |
+   |-----> [Exit]
+
+```
+
+## Deadlock 
+A deadlock is a group of goroutines which are all blocking, so none of them can continue. 
