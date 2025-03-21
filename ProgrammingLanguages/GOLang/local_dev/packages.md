@@ -138,3 +138,10 @@ Main Goroutine:
 
 ## Deadlock 
 A deadlock is a group of goroutines which are all blocking, so none of them can continue. 
+
+## Closed Channel 
+close(ch)
+
+v, ok  := <-ch
+
+You never want to send a value to a closed channel, it will create panic. There is nothing wrong in letting the channel open as it will be garbage collected if never used. 
