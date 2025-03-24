@@ -2,7 +2,7 @@
 
 So the main package is a stand alone package, it's a special type of package. You will be writing code within this package.
 
-## Library package.
+### Library package.
 
 Any other package with a different name other than main. That package is called library package.
 It's imported by a main package so that we can use it.
