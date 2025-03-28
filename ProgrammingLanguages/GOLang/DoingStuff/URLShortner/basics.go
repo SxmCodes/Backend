@@ -23,13 +23,13 @@ func generateShortCode() string {
 func redirectHandler(w http.ResponseWriter, r *http.Request) {
     shortCode := r.URL.Path[1:]
 
-    fmt.Println("Redirect request received for:", shortCode) // ✅ Debug log
+    fmt.Println("Redirect request received for:", shortCode)
 
     if longURL, exists := urlMap[shortCode]; exists {
-        fmt.Println("Redirecting to:", longURL) // ✅ Debug log
+        fmt.Println("Redirecting to:", longURL)
         http.Redirect(w, r, longURL, http.StatusMovedPermanently)
     } else {
-        fmt.Println("Short URL not found:", shortCode) // ✅ Debug log
+        fmt.Println("Short URL not found:", shortCode) 
         http.Error(w, "Short URL not found", http.StatusNotFound)
     }
 }
@@ -48,7 +48,7 @@ func createShortURL(w http.ResponseWriter, r *http.Request) {
     shortCode := generateShortCode()
     urlMap[shortCode] = longURL
 
-    fmt.Println("Stored:", shortCode, "=>", longURL) // ✅ Debug log
+    fmt.Println("Stored:", shortCode, "=>", longURL)
 
     fmt.Fprintf(w, "Short URL: http://localhost:8080/%s", shortCode)
 }
