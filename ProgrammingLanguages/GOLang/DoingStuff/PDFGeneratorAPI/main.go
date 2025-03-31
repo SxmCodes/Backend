@@ -19,7 +19,7 @@ func Takingnput(w http.ResponseWriter, r *http.Request){
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
-	body, err := io.ReadAll(r.Body) // yeh pura body bytes mein dega. Bytes ko string mein convert kar sakta hai. It will return bytes or errors. 
+	body, err := io.ReadAll(r.Body) // yeh pura body bytes mein dega. Bytes ko string mein convert kar sakta hai. It will returrors. 
 
 	if err != nil {
 		fmt.Println("Error occured!")
@@ -29,18 +29,24 @@ func Takingnput(w http.ResponseWriter, r *http.Request){
 	type JsonData struct {
 		// json data.
 		// in order to change the data from json to strings, we need to break it into parts, title ya content. 
-		Title string
-		Content string
+		Title string `json:"title"`
+		Content string `json:"content"`
 	}
 	var jsonData JsonData  
 	err = json.Unmarshal(body, &jsonData)
 	// checking error
 	if err != nil {
-		fmt.Println("Error occured!")
+		fmt.Println("Error occured!", err)
 		http.Error(w, "Error in json", http.StatusBadRequest)
 		return
 	}
-} // if there is html then no need to convert, we can use it straight way. 
+
+	// prinitng the data. 
+	fmt.Println("Title: ", jsonData.Title)
+	fmt.Println("Title: ", jsonData.Content)
+
+	w.Write([]byte("Data received successfully!")) // giving response back to client.
+	} // if there is html then no need to convert, we can use it straight way. 
 
 
 func main(){
