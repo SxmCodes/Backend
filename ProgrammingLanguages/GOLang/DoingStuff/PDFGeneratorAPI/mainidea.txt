@@ -1,0 +1,15 @@
+1. input lena from user.    
+    1. open the file. 
+    2. create a reader. 
+    3. read line by line. 
+    4. close the file. 
+2. PDF banana ke liye logic 
+3. Fonts ka support. 
+4. PDF returning and downloading. 
+5. Error handling.
+
+
+
+1. Main Idea
+
+goal is to make an api jo html ya json le aur pdf banai. 
