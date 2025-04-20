@@ -1,0 +1,12 @@
+{
+    "name": "httpserver",
+    "version": "1.0.0",
+    "description": "HTTP Server in Nodejs",
+    "license": "ISC",
+    "author": "Sxm",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index"
+    }
+}
