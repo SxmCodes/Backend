@@ -19,3 +19,7 @@ async function main() {
 
     console.log(value);
 }
+// usually you don't write your own async function, you just call it, and wrap it around another async function. 
+
+// Today's assignment is to write own async function which does a callback to the thread of cpu. How to get into main thread and ask js to make raw async function. 
+// Next assignment is to write your own promise class, which will have resolve and duration. 
