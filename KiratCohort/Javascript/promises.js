@@ -1,7 +1,7 @@
 // It will still use callback queue, event looops exitCode.
 const cart = ["shoes", "pants", "socks"];
 
-function proceedtopayement(orderid) {
+function proceedtopayement(orderid){
   console.log("Payment is being processed for order id: " + orderid);
 }
 // Why this is bad is because, here we gave the whole function into createOrder API, we were relying on the fact that createOrder will call the function after it is done with the order creation. Which is not a good practice.
@@ -9,10 +9,10 @@ createOrder(cart, function (orderid) {
   proceedtopayement(orderid);
 });
 
-//  using promises. This is more readable and maintainable code.
+// using promises. This is more readable and maintainable code.
 // In here we are attaching a callback to the promise. The promise will call the callback when it is done with the order creation.
 const promise = createOrder(cart);
-promise.then(function (orderid) {
+promise.then(function (orderid){
   return proceedtopayement(orderid);
 });
 
